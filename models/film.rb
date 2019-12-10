@@ -110,6 +110,15 @@ class Film
     return ordered.first
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM films WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    film_hash = results.first
+    film = Film.new(film_hash)
+    return film
+  end
+
 
   #Helper methods for mapping
   def self.map_items(film_data)

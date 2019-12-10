@@ -1,0 +1,7 @@
+<div class="film_list">
+<% for film in @result %>
+<ul>
+<li> <a href="/film_detail/<%=film.id%>"><%= "#{film.title}" %></a></li>
+</ul>
+<% end %>
+</div>
