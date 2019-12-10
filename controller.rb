@@ -14,3 +14,7 @@ get '/film_detail/:id' do
   @film = Film.find(params[:id].to_i)
   erb(:detail)
 end
+
+get '/return_to_list' do
+  erb(:index)
+end
